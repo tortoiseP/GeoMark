@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.windflowers.geomarkbe.demos.web;
+package com.windflowers.geomark.demos.web;
 
 /**
  * @author <a href="mailto:chenxilzx1@gmail.com">theonefx</a>

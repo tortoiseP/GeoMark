@@ -1,4 +1,4 @@
-package com.windflowers.geomarkbe;
+package com.windflowers.geomark;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
