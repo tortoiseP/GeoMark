@@ -46,7 +46,7 @@ export default Vue.extend({
   },
   layout: 'projects',
 
-  middleware: ['check-auth', 'auth'],
+  middleware: ['check-auth', 'auth'],  // 页面集合登录状态检查
 
   data() {
     return {
