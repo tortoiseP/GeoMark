@@ -1,5 +1,5 @@
 import { MemberItem } from '@/domain/models/member/member'
-import ApiService from '@/services/api.service'
+import ApiService from '@/services/api.service.v2'
 
 function toModel(item: { [key: string]: any }): MemberItem {
   return new MemberItem(item.id, item.user, item.role, item.username, item.rolename)

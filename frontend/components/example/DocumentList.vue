@@ -195,6 +195,9 @@ export default Vue.extend({
     },
 
     toSelected(item: ExampleDTO) {
+      if(item.assignments === undefined) {
+        return null;
+      }
       const assigneeIds = item.assignments.map((assignment) => assignment.assignee_id)
       return this.members.filter((member) => assigneeIds.includes(member.user))
     },

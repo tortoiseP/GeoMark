@@ -1,6 +1,6 @@
 import { Page } from '@/domain/models/page'
 import { Project } from '@/domain/models/project/project'
-import ApiService from '@/services/api.service'
+import ApiService from '@/services/api.service.v2'
 import { TagItem } from '~/domain/models/tag/tag'
 
 const sortableFieldList = ['name', 'projectType', 'createdAt', 'author'] as const
@@ -44,7 +44,7 @@ function toModel(item: { [key: string]: any }): Project {
     item.updated_at,
     item.author,
     item.is_text_project
-  )
+  );
 }
 
 function toPayload(item: Project): { [key: string]: any } {
@@ -80,12 +80,13 @@ export class APIProjectRepository {
     const ordering = query.sortDesc ? `-${sortBy}` : `${sortBy}`
     const url = `/projects?limit=${query.limit}&offset=${query.offset}&q=${query.q}&ordering=${ordering}`
     const response = await this.request.get(url)
-    return new Page(
+    const page: Page<any> = new Page(
       response.data.count,
       response.data.next,
       response.data.previous,
       response.data.results.map((project: { [key: string]: any }) => toModel(project))
     )
+    return page
   }
 
   async findById(id: string): Promise<Project> {

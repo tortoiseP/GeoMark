@@ -9,17 +9,19 @@ export const ImageCaptioning = 'ImageCaptioning'
 export const BoundingBox = 'BoundingBox'
 export const Segmentation = 'Segmentation'
 export const Speech2text = 'Speech2text'
+export const Integrated = 'Integrated'  // 新增的集成式项目
 
 export const allProjectTypes = <const>[
-  DocumentClassification,
+  Integrated,
+  // DocumentClassification,
   SequenceLabeling,
-  Seq2seq,
-  IntentDetectionAndSlotFilling,
+  // Seq2seq,
+  // IntentDetectionAndSlotFilling,
   ImageClassification,
   ImageCaptioning,
   BoundingBox,
-  Segmentation,
-  Speech2text
+  // Segmentation,
+  // Speech2text
 ]
 export type ProjectType = (typeof allProjectTypes)[number]
 const MIN_LENGTH = 1
@@ -141,16 +143,16 @@ export class Project {
   }
 
   get taskNames(): string[] {
-    if (this.projectType === IntentDetectionAndSlotFilling) {
-      return [DocumentClassification, SequenceLabeling]
-    }
+    // if (this.projectType === IntentDetectionAndSlotFilling) {
+    //   return [DocumentClassification, SequenceLabeling]
+    // }
     return [this.projectType]
   }
 
   get resourceType(): string {
-    if (this.projectType === DocumentClassification) {
-      return 'TextClassificationProject'
-    }
+    // if (this.projectType === DocumentClassification) {
+    //   return 'TextClassificationProject'
+    // }
     return `${this.projectType}Project`
   }
 

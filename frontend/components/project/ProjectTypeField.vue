@@ -28,7 +28,7 @@ import { mdiCheckBold } from '@mdi/js'
 import Vue from 'vue'
 import {
   allProjectTypes,
-  DocumentClassification,
+  Integrated,
   ProjectType
 } from '~/domain/models/project/project'
 
@@ -36,7 +36,7 @@ export default Vue.extend({
   props: {
     value: {
       type: String,
-      default: DocumentClassification,
+      default: Integrated,
       required: true
     }
   },
@@ -52,15 +52,16 @@ export default Vue.extend({
   computed: {
     images() {
       return [
-        'text_classification.png',
+        'speech_to_text.png',
+        // 'text_classification.png',
         'sequence_labeling.png',
-        'seq2seq.png',
-        'intent_detection.png',
+        // 'seq2seq.png',
+        // 'intent_detection.png',
         'image_classification.png',
         'image_captioning.jpg',
         'object_detection.jpg',
-        'segmentation.jpg',
-        'speech_to_text.png'
+        // 'segmentation.jpg',
+        // 'speech_to_text.png'
       ]
     }
   },

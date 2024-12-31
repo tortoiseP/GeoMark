@@ -107,6 +107,9 @@ export default {
     '/v1/': {
       target: process.env.API_URL || 'http://127.0.0.1:8000'
     },
+    '/v2/': {
+      target: process.env.API_URL || 'http://127.0.0.1:9000'
+    },
     '/media': {
       target: process.env.API_URL || 'http://127.0.0.1:8000'
     }

@@ -1,4 +1,4 @@
-import ApiService from '@/services/api.service'
+import ApiServiceV2 from '@/services/api.service.v2'
 import { Catalog } from '~/domain/models/upload/catalog'
 
 function toModel(item: { [key: string]: any }): Catalog {
@@ -13,7 +13,7 @@ function toModel(item: { [key: string]: any }): Catalog {
 }
 
 export class APICatalogRepository {
-  constructor(private readonly request = ApiService) {}
+  constructor(private readonly request = ApiServiceV2) {}
 
   async list(projectId: string): Promise<Catalog[]> {
     const url = `/projects/${projectId}/catalog`

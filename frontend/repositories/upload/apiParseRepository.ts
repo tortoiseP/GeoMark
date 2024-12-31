@@ -1,7 +1,7 @@
-import ApiService from '@/services/api.service'
+import ApiServiceV2 from '@/services/api.service.v2'
 
 export class APIParseRepository {
-  constructor(private readonly request = ApiService) {}
+  constructor(private readonly request = ApiServiceV2) {}
 
   async analyze(
     projectId: string,

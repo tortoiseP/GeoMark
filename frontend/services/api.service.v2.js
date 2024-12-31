@@ -5,7 +5,7 @@ axios.defaults.xsrfHeaderName = 'X-CSRFToken'
 class ApiServiceV2 {
   constructor() {
     this.instance = axios.create({
-      baseURL: process.env.baseURLV2
+      baseURL: process.env.baseUrlV2
     })
   }
 
